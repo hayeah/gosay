@@ -16,7 +16,6 @@ import (
 	"unicode"
 
 	"github.com/ebitengine/oto/v3"
-	"github.com/joho/godotenv"
 	flag "github.com/spf13/pflag"
 )
 
@@ -385,9 +384,6 @@ func main() {
 	noReplace := flag.Bool("no-replace", false, "Disable character→word conversion")
 	verbose := flag.Bool("verbose", false, "Debug output")
 	flag.Parse()
-
-	// Load .env
-	godotenv.Load()
 
 	apiKey := os.Getenv("OPENAI_API_KEY")
 	if apiKey == "" {
